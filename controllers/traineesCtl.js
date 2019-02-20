@@ -19,7 +19,7 @@ function createUser(fullName, password, email){
       }
       else if(rec == null){
         var user = new User ({
-          full_name: fullName,
+          user: fullName,
           password: "0",
           email: email,
           upper_body:0,
@@ -45,9 +45,39 @@ function createUser(fullName, password, email){
     });
   }
 
+  function setUserBlockList (full_name, upper_body, lower_body, middle_body){
+     if(upper_body == true){
+       console.log("upper_body");
+       newUser.updateOne({"user":user}, {"upper_body" : upper_body},
+       (err) => {
+         if(err)
+         console.log(`err: ${err}`);
+       });
+     }
+     if(lower_body == true){
+       console.log("lower_body");
+       newUser.updateOne({"user": user}, {"lower_body" : lower_body},
+       (err) => {
+         if(err)
+         console.log(`err: ${err}`);
+       });
+     if(middle_body == true){
+  console.log("middle_body");
+  newUser.updateOne({"user":user}, {"middle_body" : middle_body},
+  (err) => {
+    if(err)
+    console.log(`err: ${err}`);
+  });
+     }}
+    
+     newUser.update({"_id": user_id}, {"password" : "1"},
+     (err) => {
+       if(err)
+       console.log(`err: ${err}`);
+     });
+    }
 
-
-  function setUserBlockList(user_id, upper_body, lower_body, middle_body){
+  /*function setUserBlockList(user_id, upper_body, lower_body, middle_body){
     return new promise((resolve, reject) =>{
     if(upper_body == true){
       console.log("upper_body");
@@ -80,9 +110,9 @@ function createUser(fullName, password, email){
       console.log(`err: ${err}`);
     });
     resolve(true);
-  });
-  }
+  });*/
   
-
+  
+  
 
 

@@ -34,7 +34,7 @@ app.use(
 
 
 app.post('/setUserBlockList', (req, res) =>{
-  traineesCtl.setUserBlockList(req.body.userID, req.body.upper_body, req.body.lower_body, req.body.middle_body).then((result, error) => {
+  traineesCtl.setUserBlockList(req.body.user, req.body.upper_body, req.body.lower_body, req.body.middle_body).then((result, error) => {
     if(result)
       res.status(200).json({"message": "blocklist updated"});
   });

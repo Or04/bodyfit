@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 const schema={
-full_name:String,
+user:String,
 password:  String,
 email: String,
 bmi: Number,

@@ -1,7 +1,7 @@
 var express = require('express'),
  app = express(),
  traineesCtl = require('./controllers/traineesCtl'),
-// bodyParser = require('body-parser'),
+ //bodyParser = require('body-parser'),
  port = process.env.PORT || 3000;
 
 app.use(express.json());
